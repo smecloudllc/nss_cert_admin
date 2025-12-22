@@ -1,13 +1,11 @@
 "use client";
 
-import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { routes } from "@/routes";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  BellIcon,
   HouseIcon,
   WarningOctagonIcon,
   ArrowClockwiseIcon,
@@ -32,16 +30,16 @@ export default function ErrorState({ message }: ErrorStateProps) {
     },
     {
       title: "Users",
-      description: "Manage user accounts",
+      description: "Manage certificates",
       icon: User2Icon,
-      href: routes.dashboard.users.index,
+      href: routes.dashboard.management.certificate.index,
       color: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-200",
     },
     {
-      title: "Transactions",
-      description: "View all transactions",
+      title: "Batching",
+      description: "View all batches",
       icon: WalletIcon,
-      href: routes.dashboard.transactions,
+      href: routes.dashboard.batching,
       color: "bg-red-500 text-white",
     },
   ];
@@ -134,26 +132,6 @@ export default function ErrorState({ message }: ErrorStateProps) {
             <p className="text-xs text-muted-foreground mb-3">
               Visit notifications for updates or contact support for help.
             </p>
-            <div className="flex flex-col sm:flex-row gap-2 justify-center">
-              <Button
-                asChild
-                variant="outline"
-                className="border-red-600 text-red-700 hover:bg-red-600 hover:text-white"
-              >
-                <Link href={routes.dashboard.notifications.index}>
-                  <BellIcon size={14} className="mr-2" /> View Notifications
-                </Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-red-600 text-red-700 hover:bg-red-600 hover:text-white"
-              >
-                <Link href={routes.dashboard.support.index}>
-                  Contact Support
-                </Link>
-              </Button>
-            </div>
           </CardContent>
         </Card>
 

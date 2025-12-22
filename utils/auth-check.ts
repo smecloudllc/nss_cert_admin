@@ -33,7 +33,7 @@ export async function requireAuthentication() {
   }
   // Role-based redirection
   if (userRole === "writer") {
-    return routes.dashboard.contentManagement.blogs.index;
+    return routes.dashboard.management.certificate.index;
   }
 
   return null;
@@ -48,7 +48,7 @@ export async function requireGuest() {
   }
   // Role-based redirection
   if (userRole === "writer") {
-    return routes.dashboard.contentManagement.blogs.index;
+    return routes.dashboard.management.certificate.index;
   }
 
   return routes.dashboard.overview;
