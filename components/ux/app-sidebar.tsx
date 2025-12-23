@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils";
 import { UiCollapsible, UiDropdownMenu, UiSidebar } from "../ui";
 import ThemeSwitchSimple from "./theme-switcher-simple";
 import StatusBadge from "./status-badge";
+import { NSALOGO } from "@/public/images";
 
 const user: IUser = {
   role: "super",
@@ -65,20 +66,19 @@ export function AppSidebar() {
       <UiSidebar.SidebarHeader className=" dark:bg-neutral-900  border-gray-200 dark:border-neutral-800">
         <UiSidebar.SidebarMenu>
           <UiSidebar.SidebarMenuItem className="p-1 flex justify-between items-center gap-2">
-            <div className="flex items-center gap-2 min-w-0">
-              <div className="shrink-0">
-                <div className="w-8 h-8 rounded bg-brand-primary flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">K</span>
-                </div>
+            <div className="rounded-full p-1 shadow">
+              <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center bg-gray-200 shrink-0">
+                <Image
+                  src={NSALOGO}
+                  alt="User Image"
+                  width={100}
+                  height={32}
+                  quality={100}
+                  className="object-cover w-full h-full"
+                />
               </div>
-              {!isCollapsed && (
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-900 dark:text-gray-100 truncate">
-                    KelvinWorld
-                  </p>
-                </div>
-              )}
             </div>
+
             {!isCollapsed && <StatusBadge status={user?.role || ""} />}
           </UiSidebar.SidebarMenuItem>
         </UiSidebar.SidebarMenu>
@@ -265,15 +265,15 @@ export function AppSidebar() {
                   className="data-[state=open]:bg-brand-lime/10 dark:data-[state=open]:bg-brand-secondary/40 hover:bg-brand-lime/10 hover:text-brand-primary dark:hover:bg-brand-secondary/80 dark:hover:text-brand-primary"
                 >
                   <div className="flex items-center gap-2 flex-1 min-w-0">
-                    <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center bg-gray-200 flex-shrink-0">
-                      {user?.image ? (
-                        <Image
-                          src={user.image}
-                          alt="User Image"
-                          width={32}
-                          height={32}
-                          className="object-cover w-full h-full"
-                        />
+                    <div className="w-8 h-8 rounded overflow-hidden flex items-center justify-center bg-gray-200 flex-shrink-0">
+                      {user?.first_name ? (
+                        <div className="shrink-0">
+                          <div className="w-8 h-8 rounded bg-brand-primary flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">
+                              K
+                            </span>
+                          </div>
+                        </div>
                       ) : (
                         <div className="rounded-full bg-gray-100 dark:bg-gray-950 p-1 flex justify-center items-center">
                           <UserCircleIcon weight="fill" size={20} />
@@ -283,7 +283,8 @@ export function AppSidebar() {
                     {!isCollapsed && (
                       <div className="flex flex-col items-start min-w-0 flex-1">
                         <span className="text-sm font-medium text-gray-900 dark:text-gray-100 truncate w-full">
-                          {user?.username || "Loading..."}
+                          {user?.first_name + " " + user?.last_name ||
+                            "Loading..."}
                         </span>
                         <span className="text-xs text-gray-500 dark:text-neutral-100 truncate w-full">
                           {user?.email || ""}
@@ -304,15 +305,15 @@ export function AppSidebar() {
               >
                 <UiDropdownMenu.DropdownMenuLabel className="p-0 font-normal">
                   <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                    <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center bg-gray-200 shrink-0">
-                      {user?.image ? (
-                        <Image
-                          src={user.image}
-                          alt="User Image"
-                          width={32}
-                          height={32}
-                          className="object-cover w-full h-full"
-                        />
+                    <div className="w-8 h-8 rounded overflow-hidden flex items-center justify-center bg-gray-200 shrink-0">
+                      {user?.first_name ? (
+                        <div className="shrink-0">
+                          <div className="w-8 h-8 rounded bg-brand-primary flex items-center justify-center">
+                            <span className="text-white font-bold text-sm">
+                              K
+                            </span>
+                          </div>
+                        </div>
                       ) : (
                         <div className="rounded-full bg-gray-100 dark:bg-gray-950 p-1 flex justify-center items-center">
                           <UserCircleIcon weight="fill" size={20} />
@@ -321,7 +322,7 @@ export function AppSidebar() {
                     </div>
                     <div className="grid flex-1 text-left text-sm leading-tight">
                       <span className="truncate font-semibold">
-                        {user?.username || "---"}
+                        {user?.first_name + " " + user?.last_name || "---"}
                       </span>
                       <span className="truncate text-xs text-gray-500 dark:text-gray-400">
                         {user?.email || "---"}

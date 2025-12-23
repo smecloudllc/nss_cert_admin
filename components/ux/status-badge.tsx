@@ -22,6 +22,8 @@ interface StatusBadgeProps {
     | "banned"
     | "notdeleted"
     | "deleted"
+    | "printed"
+    | "not_printed"
     | string;
 }
 
@@ -30,6 +32,16 @@ const statusMap = {
     label: "Active",
     dot: "bg-green-500",
     badge: "bg-green-100 text-green-800 border-green-200",
+  },
+  printed: {
+    label: "Printed",
+    dot: "bg-green-500",
+    badge: "bg-green-100 text-green-800 border-green-200",
+  },
+  not_printed: {
+    label: "Not Printed",
+    dot: "bg-red-500",
+    badge: "bg-red-100 text-red-800 border-red-200",
   },
   withdrawal: {
     label: "Withdrawal",
@@ -144,7 +156,7 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
 
   return (
     <span
-      className={`py-0.5 px-2 border rounded-full text-xs font-medium inline-flex items-center gap-1 ${badge}`}
+      className={`py-0.5 px-2.5 border rounded-full text-xs font-semibold inline-flex items-center gap-1 ${badge}`}
     >
       <span className={`w-2 h-2 rounded-full mr-1 ${dot}`} />
       {label}

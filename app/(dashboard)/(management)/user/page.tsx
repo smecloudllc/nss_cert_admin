@@ -4,9 +4,9 @@ import { UiLayout } from "@/components/ui";
 export default function Page() {
   return (
     <UiLayout.Layout
-      header="Manifest"
+      header="User Management"
       canAccess={true}
-      subHeading="A digital representation of batched certificates"
+      subHeading="Manage users  on the system"
       className="min-h-screen overflow-auto"
     >
       <div>Coming soon...</div>

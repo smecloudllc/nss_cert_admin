@@ -35,9 +35,14 @@ export const menuGroups: MenuGroup[] = [
         url: routes.dashboard.batching,
         icon: Icon.BookIcon,
       },
-
       {
-        title: "Manifest",
+        title: "Certificates",
+        url: routes.dashboard.certificate.index,
+        icon: Icon.CertificateIcon,
+        roles: ["marketing", "writer"],
+      },
+      {
+        title: "Manifests",
         url: routes.dashboard.manifest.index,
         icon: Icon.FileDottedIcon,
       },
@@ -49,9 +54,15 @@ export const menuGroups: MenuGroup[] = [
     label: "Managemnet",
     items: [
       {
-        title: "Certificate",
-        url: routes.dashboard.management.certificate.index,
-        icon: Icon.CertificateIcon,
+        title: "User",
+        url: routes.dashboard.management.user.index,
+        icon: Icon.UsersIcon,
+        roles: ["marketing", "writer"],
+      },
+      {
+        title: "Roles and Permissions",
+        url: routes.dashboard.management.role_and_permissions.index,
+        icon: Icon.KeyIcon,
         roles: ["marketing", "writer"],
       },
     ],

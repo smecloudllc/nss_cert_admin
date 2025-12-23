@@ -1,7 +1,8 @@
 "use client";
 import Animation from "@/components/animations/animations";
 import Login from "@/components/forms/auth/login/login";
-import { motion } from "framer-motion";
+import { NSALOGO } from "@/public/images";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -9,28 +10,18 @@ export default function Page() {
       <div className="flex flex-col items-center justify-center h-screen w-full ">
         {/* Form goes here */}
         <div className="flex flex-col items-center justify-center h-full p-4 space-y-6 ">
-          {/* <Image
-            src={"/images/Logo.png"}
-            alt="Zedi Logo"
-            width={50}
-            height={50}
-          /> */}
-          <motion.section
-            initial={{ backgroundPosition: "0% 50%" }}
-            animate={{ backgroundPosition: "100% 50%" }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              repeatType: "mirror",
-              ease: "anticipate",
-            }}
-            className="p-6 rounded-full text-white shadow-lg
-    bg-[length:200%_200%]
-    bg-gradient-to-br 
-    from-red-600/80 
-    via-yellow-400/80 
-    to-green-600/80"
-          ></motion.section>
+          <div className="rounded-full p-1 shadow">
+            <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-gray-200 shrink-0">
+              <Image
+                src={NSALOGO}
+                alt="User Image"
+                width={100}
+                height={32}
+                quality={100}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
 
           {/* Form component */}
           <div className="flex flex-col items-center justify-center space-y-4">

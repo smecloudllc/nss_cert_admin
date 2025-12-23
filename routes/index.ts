@@ -4,7 +4,9 @@ export const routes = {
     // Main dashboard routes
     overview: "/overview",
     batching: "/batching",
-
+    certificate: {
+      index: "/certificate",
+    },
     manifest: {
       index: "/manifest",
     },
@@ -15,8 +17,11 @@ export const routes = {
     },
 
     management: {
-      certificate: {
-        index: "/certificate",
+      user: {
+        index: "/user",
+      },
+      role_and_permissions: {
+        index: "/roles_permissions",
       },
     },
   },
