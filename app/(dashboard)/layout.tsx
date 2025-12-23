@@ -18,7 +18,7 @@ export default function Layout({
       <div className="flex h-screen w-full">
         <AppSidebar />
         <div className="flex-1 relative h-full no-scrollbar overflow-auto bg-white dark:bg-neutral-900  w-full">
-          <SidebarTrigger className="absolute top-1 left-4 z-10 " />
+          <SidebarTrigger className="absolute top-1 left-4 z-10 lg:hidden block" />
           <div className="h-full">{children}</div>
         </div>
       </div>

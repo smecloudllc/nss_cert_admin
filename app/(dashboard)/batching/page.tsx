@@ -6,10 +6,10 @@ export default function Page() {
     <UiLayout.Layout
       header="Batching"
       canAccess={true}
-      subHeading="text here"
+      subHeading="Batch of various certificates accross the system"
       className="min-h-screen overflow-auto"
     >
-      <div>Overview coming soon...</div>
+      <div>Coming soon...</div>
     </UiLayout.Layout>
   );
 }

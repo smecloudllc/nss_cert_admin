@@ -4,12 +4,12 @@ import { UiLayout } from "@/components/ui";
 export default function Page() {
   return (
     <UiLayout.Layout
-      header="Certficate Management"
+      header="Roles and Permissions"
       canAccess={true}
-      subHeading="text here"
+      subHeading="Manage various roles and permissions on the system for users"
       className="min-h-screen overflow-auto"
     >
-      <div>Overview coming soon...</div>
+      <div>Coming soon...</div>
     </UiLayout.Layout>
   );
 }

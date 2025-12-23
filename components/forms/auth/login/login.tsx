@@ -15,8 +15,8 @@ import { routes } from "@/routes";
 
 // This is for form schema
 const formSchema = z.object({
-  username: z.string().min(1, {
-    message: "Username field is required",
+  email: z.string().min(1, {
+    message: "Email field is required",
   }),
 });
 
@@ -37,13 +37,11 @@ export default function Login() {
     resolver: zodResolver(formSchema),
     mode: "onBlur",
     defaultValues: {
-      username: "",
+      email: "",
     },
   });
 
   const handleSubmit = async (formdata: z.infer<typeof formSchema>) => {
-    setLoading(true);
-
     // setOtpStore({
     //   admin: formdata.admin,
     //   device: `${deviceInfo.device} - ${deviceInfo.browser.name} - ${deviceInfo.browser.version} - ${deviceInfo.os}`,
@@ -80,15 +78,15 @@ export default function Login() {
           >
             <UiForm.FormField
               control={form.control}
-              name="username"
+              name="email"
               render={({ field }) => (
                 <UiForm.FormItem>
                   <UiForm.FormLabel className=" text-gray-500 text-sm">
-                    Username
+                    Email
                   </UiForm.FormLabel>
                   <UiForm.FormControl>
                     <UiInput.Input
-                      placeholder="Eg. realkelvinworld"
+                      placeholder="Eg. kwaku@mail.com"
                       className=" py-6 px-4"
                       {...field}
                     />

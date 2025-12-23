@@ -18,8 +18,8 @@ export default function Page() {
       <div className="h-screen flex flex-col justify-center items-center">
         <section className="flex flex-col items-center justify-center space-y-6">
           {/* icon */}
-          <div className="rounded-full bg-brand-secondary/50 p-2">
-            <div className="rounded-full border-6 border-brand-primary/10 p-3">
+          <div className="rounded-full bg-brand-secondary/80 p-2">
+            <div className="rounded-full border-6 border-brand-primary p-3">
               <Mail size={28} className="text-brand-primary" />
             </div>
           </div>
@@ -31,7 +31,7 @@ export default function Page() {
             <p className="text-center my-2 w-xs text-sm">
               Hi{" "}
               <span className="text-md font-bold text-brand-primary dark:text-brand-secondary ">
-                {/* " {tempUser?.username} " */} " kelvinworld "
+                {/* " {tempUser?.username} " */} " kwakumail@mail.com "
               </span>
               , Kindly enter the 6-digit code sent to your email. This code will
               expire in 5 minutes.

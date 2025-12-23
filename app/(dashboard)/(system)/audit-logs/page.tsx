@@ -6,10 +6,10 @@ export default function Page() {
     <UiLayout.Layout
       header="Audit-Logs"
       canAccess={true}
-      subHeading="Text here"
+      subHeading="A back-log of all actions performed accross the platform"
       className="min-h-screen overflow-auto"
     >
-      <div>Overview coming soon...</div>
+      <div>Coming soon...</div>
     </UiLayout.Layout>
   );
 }

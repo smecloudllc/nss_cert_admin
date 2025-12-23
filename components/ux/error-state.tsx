@@ -32,7 +32,7 @@ export default function ErrorState({ message }: ErrorStateProps) {
       title: "Users",
       description: "Manage certificates",
       icon: User2Icon,
-      href: routes.dashboard.management.certificate.index,
+      href: routes.dashboard.certificate.index,
       color: "bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-200",
     },
     {

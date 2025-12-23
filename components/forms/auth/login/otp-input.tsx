@@ -20,13 +20,13 @@ import { routes } from "@/routes";
 
 // This is for form schema
 const formSchema = z.object({
-  code: z.string().min(6, {
+  code: z.string().min(1, {
     message: "Your one-time password must be 6 characters.",
   }),
-  token: z.string().min(1, {
-    message: "Token field is required",
-  }),
-  admin: z.boolean(),
+  // token: z.string().min(1, {
+  //   message: "Token field is required",
+  // }),
+  // admin: z.boolean(),
 });
 
 export default function OtpInput() {
@@ -48,51 +48,54 @@ export default function OtpInput() {
   // const { setUser } = useUserStore();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    mode: "onBlur",
+    mode: "all",
     defaultValues: {
       code: "",
-      token: "",
-      admin: true,
+      // token: "",
+      // admin: true,
     },
   });
 
-  // Get Device Info
-  const info = getDeviceInfo();
-
   // Handle submission
   const handleSubmit = async (formdata: z.infer<typeof formSchema>) => {
-    setLoading(true);
-
     try {
-      // const response = await LoginServiceVerify({
-      //   ...formdata,
-      //   token: freshTempUser?.token || formdata.token, // Use fresh token
-      //   device: `${info.device} - ${info.browser.name} - ${info.browser.version} - ${info.os}`,
-      // });
-
-      console.log("");
-      // Set cookie only once
-      // await setAuthCookies(response.info.token, response.info.role);
-
-      // Update stores
-      // setUser(response.info);
-      // setWebToken(response.info.token);
-      // setRole(response.info.role);
-      toast.success("Login successful", {
-        style: {
-          backgroundColor: "#18464b",
-          color: "white",
-        },
-      });
-
-      // if (response.info.role === "writer") {
-      //   router.push(routes.dashboard.contentManagement.blogs.index);
-      // } else {
-      //   router.push(routes.dashboard.overview);
-      // }
+      console.log("Form data:", formdata);
+      router.push(routes.dashboard.overview);
     } finally {
       setLoading(false);
     }
+
+    // try {
+    //   // const response = await LoginServiceVerify({
+    //   //   ...formdata,
+    //   //   token: freshTempUser?.token || formdata.token, // Use fresh token
+    //   //   device: `${info.device} - ${info.browser.name} - ${info.browser.version} - ${info.os}`,
+    //   // });
+
+    //   console.log("");
+    //   // Set cookie only once
+    //   // await setAuthCookies(response.info.token, response.info.role);
+
+    //   // Update stores
+    //   // setUser(response.info);
+    //   // setWebToken(response.info.token);
+    //   // setRole(response.info.role);
+
+    //   toast.success("Login successful", {
+    //     style: {
+    //       backgroundColor: "#18464b",
+    //       color: "white",
+    //     },
+    //   });
+
+    //   // if (response.info.role === "writer") {
+    //   //   router.push(routes.dashboard.contentManagement.blogs.index);
+    //   // } else {
+    //   //   router.push(routes.dashboard.overview);
+    //   // }
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (

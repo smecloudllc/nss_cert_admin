@@ -33,25 +33,8 @@ export async function requireAuthentication() {
   }
   // Role-based redirection
   if (userRole === "writer") {
-    return routes.dashboard.management.certificate.index;
+    return routes.dashboard.certificate.index;
   }
 
   return null;
 }
-
-// Guests
-export async function requireGuest() {
-  const { isAuthenticated, userRole } = await checkAuthentication();
-
-  if (!isAuthenticated) {
-    return null;
-  }
-  // Role-based redirection
-  if (userRole === "writer") {
-    return routes.dashboard.management.certificate.index;
-  }
-
-  return routes.dashboard.overview;
-}
-
-// This is to be used on the home page - was brought here for simplicity
