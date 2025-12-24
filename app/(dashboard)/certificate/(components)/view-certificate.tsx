@@ -41,7 +41,7 @@ export default function ViewCertificateSheet({
 }: Props) {
   return (
     <UiSheet.Sheet open={open} onOpenChange={onOpenChange}>
-      <UiSheet.SheetContent className="w-full max-w-[700px]">
+      <UiSheet.SheetContent className="w-full max-w-[600px] overflow-auto ">
         <UiSheet.SheetHeader>
           <UiSheet.SheetTitle>Certificate Details</UiSheet.SheetTitle>
           <UiSheet.SheetDescription>
@@ -49,7 +49,7 @@ export default function ViewCertificateSheet({
           </UiSheet.SheetDescription>
         </UiSheet.SheetHeader>
 
-        <div className="flex flex-col h-full overflow-auto p-4 space-y-4">
+        <div className="flex flex-col h-full overflow-auto px-4 pb-10 space-y-4">
           {/* Top section */}
           <div className="flex justify-between items-center">
             <p>{dayjs(certificate.date_added).format("DD MMM YYYY")}</p>

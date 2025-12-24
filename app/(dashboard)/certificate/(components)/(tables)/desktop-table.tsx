@@ -84,6 +84,9 @@ Props) {
               <UiTable.TableHead className="dark:text-neutral-300 font-semibold">
                 Certificate Type
               </UiTable.TableHead>
+              <UiTable.TableHead className="dark:text-neutral-300 font-semibold">
+                Enrollment Type
+              </UiTable.TableHead>
 
               <UiTable.TableHead className="dark:text-neutral-300 font-semibold">
                 Service Details
@@ -125,6 +128,9 @@ Props) {
                 </UiTable.TableCell>
                 <UiTable.TableCell className="pr-20">
                   <Pill status={cet.certificate_type.toLowerCase()} />
+                </UiTable.TableCell>
+                <UiTable.TableCell className="pr-10 font-semibold">
+                  {cet.enrollment_type}
                 </UiTable.TableCell>
 
                 <UiTable.TableCell className="text-gray-500 dark:text-neutral-300 pr-10">
@@ -233,6 +239,7 @@ const certificateData = [
     qualification: "BSc Computer Science",
     print_date: "2024-10-05",
     institution: "University of Ghana",
+    enrollment_type: "General Enrollment",
   },
   {
     certificate_id: "CERT-2024-0002",
@@ -254,6 +261,7 @@ const certificateData = [
     qualification: "BA Sociology",
     print_date: "2024-10-06",
     institution: "Kwame Nkrumah University of Science and Technology",
+    enrollment_type: "Teacher Enrollment",
   },
   {
     certificate_id: "CERT-2024-0003",
@@ -275,6 +283,7 @@ const certificateData = [
     qualification: "BTech Information Technology",
     print_date: null,
     institution: "Koforidua Technical University",
+    enrollment_type: "Nursing Batch 1",
   },
   {
     certificate_id: "CERT-2024-0004",
@@ -296,6 +305,7 @@ const certificateData = [
     qualification: "BSc Nursing",
     print_date: "2024-10-08",
     institution: "University of Cape Coast",
+    enrollment_type: "General Enrollment",
   },
   {
     certificate_id: "CERT-2024-0005",
@@ -317,6 +327,7 @@ const certificateData = [
     qualification: "BSc Logistics and Supply Chain",
     print_date: "2024-10-09",
     institution: "University of Education, Winneba",
+    enrollment_type: "General Enrollment",
   },
   {
     certificate_id: "CERT-2024-0006",
@@ -338,6 +349,7 @@ const certificateData = [
     qualification: "BA Public Administration",
     print_date: "2024-10-10",
     institution: "University of Professional Studies, Accra",
+    enrollment_type: "Nursing Batch 2",
   },
   {
     certificate_id: "CERT-2024-0007",
@@ -359,6 +371,7 @@ const certificateData = [
     qualification: "BSc Economics",
     print_date: null,
     institution: "University for Development Studies",
+    enrollment_type: "Teacher Enrollment",
   },
   {
     certificate_id: "CERT-2024-0008",
@@ -380,6 +393,7 @@ const certificateData = [
     qualification: "BSc Information Systems",
     print_date: "2024-10-12",
     institution: "Ashesi University",
+    enrollment_type: "Teacher Enrollment",
   },
   {
     certificate_id: "CERT-2024-0009",
@@ -401,6 +415,7 @@ const certificateData = [
     qualification: "BSc Health Information Management",
     print_date: "2024-10-13",
     institution: "University for Development Studies",
+    enrollment_type: "General Enrollment",
   },
   {
     certificate_id: "CERT-2024-0010",
@@ -422,5 +437,6 @@ const certificateData = [
     qualification: "BSc Environmental Science",
     print_date: "2024-10-14",
     institution: "University of Energy and Natural Resources",
+    enrollment_type: "General Enrollment",
   },
 ];
